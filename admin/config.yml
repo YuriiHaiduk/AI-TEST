@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: yuriihaiduk/AI-TEST  # Ваша связка "Логин/Имя-Репозитория" на GitHub
+  branch: main
+
+media_folder: "images"       # Куда сохранять загруженные клиентом картинки
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Информация на сайте"
+    files:
+      - file: "site-data.json" # Файл, где будут храниться тексты
+        label: "Контакты и Заголовки"
+        name: "contacts"
+        fields:
+          - { label: "Заголовок сайта", name: "title", widget: "string" }
+          - { label: "Телефон", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
