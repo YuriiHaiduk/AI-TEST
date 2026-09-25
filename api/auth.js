@@ -27,11 +27,12 @@ export default async function handler(req, res) {
     const token = data.access_token;
 
     // 3. Возвращаем скрипт, который передает токен в Decap CMS и закрывает окно
+    // 3. Возвращаем скрипт, который передает токен в Decap CMS и закрывает окно
     const content = `
       <script>
         const receiveMessage = (message) => {
           window.opener.postMessage(
-            'authorization:github:success:${JSON.stringify({ token, provider: 'github' })}',
+            'authorization:github:success:' + JSON.stringify({ token: "${token}", provider: 'github' }),
             message.origin
           );
           window.removeEventListener('message', receiveMessage, false);
