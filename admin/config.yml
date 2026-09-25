@@ -1,7 +1,9 @@
 backend:
   name: github
-  repo: yuriihaiduk/AI-TEST  # Ваша связка "Логин/Имя-Репозитория" на GitHub
+  repo: yuriihaiduk/AI-TEST
   branch: main
+  base_url: https://ai-barbershop-yurii.vercel.app
+  auth_endpoint: api/auth
 
 media_folder: "images"       # Куда сохранять загруженные клиентом картинки
 public_folder: "/images"
