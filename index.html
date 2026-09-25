@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klinge & Kamm — Barbershop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1b1613;
+    --bg-alt:#221b17;
+    --text:#f1e9dd;
+    --text-dim:#b5a898;
+    --brass:#c69a51;
+    --wine:#5e2a2a;
+    --line:rgba(241,233,221,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  h1,h2{font-family:'Fraunces',serif;font-weight:600;line-height:1.1;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 24px;max-width:1040px;margin:0 auto;
+  }
+  .logo{font-family:'Fraunces',serif;font-size:1.3rem;letter-spacing:0.02em;}
+  .logo span{color:var(--brass);}
+  nav a{color:var(--text-dim);text-decoration:none;margin-left:28px;font-size:0.95rem;}
+  nav a:hover{color:var(--text);}
+
+  .hero{
+    display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;
+    align-items:center;padding:60px 24px 90px;max-width:1040px;margin:0 auto;
+  }
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);}
+  .hero p{color:var(--text-dim);margin-top:20px;max-width:38ch;font-size:1.05rem;}
+  .cta{
+    display:inline-block;margin-top:32px;padding:14px 30px;
+    background:var(--brass);color:#1b1613;text-decoration:none;
+    font-weight:600;border-radius:2px;letter-spacing:0.01em;
+  }
+  .cta:hover{background:#d6ab63;}
+  .hero-art{display:flex;justify-content:center;}
+  .hero-art svg{width:100%;max-width:220px;}
+
+  section{padding:70px 0;border-top:1px solid var(--line);}
+  .eyebrow{color:var(--brass);font-size:0.85rem;margin-bottom:10px;}
+  .services{background:var(--bg-alt);}
+  .service-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1px;background:var(--line);margin-top:36px;
+  }
+  .service{background:var(--bg-alt);padding:28px 24px;}
+  .service h3{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;margin-bottom:8px;}
+  .service .price{color:var(--brass);font-size:0.95rem;}
+  .service p{color:var(--text-dim);font-size:0.92rem;margin-top:6px;}
+
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+  .about p{color:var(--text-dim);margin-top:16px;}
+  .hours{margin-top:20px;font-size:0.92rem;}
+  .hours div{display:flex;justify-content:space-between;max-width:240px;padding:4px 0;border-bottom:1px solid var(--line);}
+
+  .contact{background:var(--bg-alt);}
+  .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  form{display:flex;flex-direction:column;gap:14px;margin-top:30px;}
+  input,textarea{
+    background:transparent;border:none;border-bottom:1px solid var(--line);
+    color:var(--text);font-family:'Inter',sans-serif;font-size:1rem;
+    padding:10px 2px;outline:none;
+  }
+  input:focus,textarea:focus{border-color:var(--brass);}
+  textarea{resize:vertical;min-height:90px;}
+  button[type=submit]{
+    align-self:flex-start;margin-top:10px;padding:14px 30px;
+    background:var(--brass);color:#1b1613;border:none;font-weight:600;
+    font-size:1rem;border-radius:2px;cursor:pointer;font-family:'Inter',sans-serif;
+  }
+  button[type=submit]:hover{background:#d6ab63;}
+  button[disabled]{opacity:0.6;cursor:not-allowed;}
+  #form-status{font-size:0.9rem;margin-top:8px;min-height:1.2em;}
+  #form-status.ok{color:#8fbf8f;}
+  #form-status.err{color:#d68a8a;}
+
+  footer{padding:36px 24px;text-align:center;color:var(--text-dim);font-size:0.85rem;border-top:1px solid var(--line);}
+
+  @media (max-width:720px){
+    .hero{grid-template-columns:1fr;}
+    .hero-art{order:-1;max-width:140px;margin:0 auto;}
+    .about,.contact-inner{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Klinge <span>&</span> Kamm</div>
+  <nav>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Handwerk am Kopf,<br>nicht von der Stange.</h1>
+    <p>Klassischer Herrenschnitt und Bartpflege in Kassel — ruhige Hand, scharfe Klinge, kein Termin­stress.</p>
+    <a class="cta" href="#kontakt">Termin anfragen</a>
+  </div>
+  <div class="hero-art">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 150 L150 40" stroke="#c69a51" stroke-width="3"/>
+      <circle cx="40" cy="150" r="18" stroke="#c69a51" stroke-width="3"/>
+      <circle cx="40" cy="150" r="4" fill="#c69a51"/>
+      <path d="M150 40 L170 20 M150 40 L175 45" stroke="#c69a51" stroke-width="3" stroke-linecap="round"/>
+      <path d="M60 130 L20 170" stroke="#5e2a2a" stroke-width="2" opacity="0.7"/>
+    </svg>
+  </div>
+</div>
+
+<section class="services" id="leistungen">
+  <div class="wrap">
+    <div class="eyebrow">Leistungen</div>
+    <h2>Was wir machen</h2>
+    <div class="service-grid">
+      <div class="service">
+        <h3>Herrenschnitt</h3>
+        <div class="price">28 €</div>
+        <p>Beratung, Schnitt, Styling.</p>
+      </div>
+      <div class="service">
+        <h3>Bartpflege</h3>
+        <div class="price">18 €</div>
+        <p>Konturenschnitt mit heißem Handtuch.</p>
+      </div>
+      <div class="service">
+        <h3>Schnitt & Bart</h3>
+        <div class="price">40 €</div>
+        <p>Das komplette Paket in einem Termin.</p>
+      </div>
+      <div class="service">
+        <h3>Kinderschnitt</h3>
+        <div class="price">18 €</div>
+        <p>Bis 12 Jahre, entspanntes Tempo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="ueber-uns" style="max-width:1040px;margin:0 auto;padding-left:24px;padding-right:24px;">
+  <div>
+    <div class="eyebrow">Über uns</div>
+    <h2>Seit 2018 in Kassel</h2>
+    <p>Drei Stühle, ein Handwerk. Wir nehmen uns Zeit für jeden Schnitt — keine Fließbandarbeit, keine Hektik.</p>
+  </div>
+  <div class="hours">
+    <div><span>Di – Fr</span><span>9:00 – 19:00</span></div>
+    <div><span>Sa</span><span>9:00 – 15:00</span></div>
+    <div><span>So / Mo</span><span>geschlossen</span></div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap contact-inner">
+    <div>
+      <div class="eyebrow">Kontakt</div>
+      <h2>Schreib uns kurz</h2>
+      <p style="color:var(--text-dim);margin-top:14px;">Wir melden uns meist noch am selben Tag zurück.</p>
+    </div>
+    <form id="contact-form">
+      <!-- WICHTIG: hier den eigenen kostenlosen Access Key von web3forms.com eintragen -->
+      <input type="hidden" name="access_key" value="a1ec2e71-8202-47e3-86c5-4443ead0d142">
+      <input type="hidden" name="subject" value="Neue Anfrage — Klinge & Kamm Website">
+
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="E-Mail" required>
+      <input type="tel" name="phone" placeholder="Telefon (optional)">
+      <textarea name="message" placeholder="Nachricht" required></textarea>
+      <button type="submit">Nachricht senden</button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  Klinge & Kamm · Musterstraße 1, 34117 Kassel · © 2026
+</footer>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    status.className = '';
+    status.textContent = 'Wird gesendet …';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        status.className = 'ok';
+        status.textContent = 'Danke! Wir melden uns bald.';
+        form.reset();
+      } else {
+        status.className = 'err';
+        status.textContent = 'Etwas ist schiefgelaufen. Bitte per Telefon versuchen.';
+      }
+    } catch (err) {
+      status.className = 'err';
+      status.textContent = 'Verbindungsfehler. Bitte später erneut versuchen.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>
