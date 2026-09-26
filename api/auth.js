@@ -24,6 +24,7 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
+    console.log('GITHUB RESPONSE:', JSON.stringify(data));
     const token = data.access_token;
     console.log('TOKEN RECEIVED:', token ? 'YES' : 'NO', token); // <-- добавьте это
 
