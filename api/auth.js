@@ -25,6 +25,7 @@ export default async function handler(req, res) {
 
     const data = await response.json();
     const token = data.access_token;
+    console.log('TOKEN RECEIVED:', token ? 'YES' : 'NO', token); // <-- добавьте это
 
     // 3. Возвращаем скрипт, который передает токен в Decap CMS и закрывает окно
     // 3. Возвращаем скрипт, который передает токен в Decap CMS и закрывает окно
