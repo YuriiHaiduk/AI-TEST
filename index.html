@@ -112,8 +112,8 @@
 
 <div class="hero">
   <div>
-    <h1>Handwerk am Kopf,<br>nicht von der Stange.</h1>
-    <p>Klassischer Herrenschnitt und Bartpflege in Kassel — ruhige Hand, scharfe Klinge, kein Termin­stress.</p>
+    <h1 id="hero-title">Handwerk am Kopf,<br>nicht von der Stange.</h1>
+    <p id="hero-subtitle">Klassischer Herrenschnitt und Bartpflege in Kassel — ruhige Hand, scharfe Klinge, kein Terminstress.</p>
     <a class="cta" href="#kontakt">Termin anfragen</a>
   </div>
   <div class="hero-art">
@@ -159,8 +159,8 @@
 <section class="about" id="ueber-uns" style="max-width:1040px;margin:0 auto;padding-left:24px;padding-right:24px;">
   <div>
     <div class="eyebrow">Über uns</div>
-    <h2>Seit 2018 in Kassel</h2>
-    <p>Drei Stühle, ein Handwerk. Wir nehmen uns Zeit für jeden Schnitt — keine Fließbandarbeit, keine Hektik.</p>
+    <h2 id="about-title">Seit 2018 in Kassel</h2>
+    <p id="about-text">Drei Stühle, ein Handwerk. Wir nehmen uns Zeit für jeden Schnitt — keine Fließbandarbeit, keine Hektik.</p>
   </div>
   <div class="hours">
     <div><span>Di – Fr</span><span>9:00 – 19:00</span></div>
@@ -192,7 +192,7 @@
 </section>
 
 <footer>
-  Klinge & Kamm · Musterstraße 1, 34117 Kassel · © 2026
+  <span id="footer-text">Klinge & Kamm · Musterstraße 1, 34117 Kassel · © 2026</span>
 </footer>
 
 <script>
@@ -229,6 +229,18 @@
       btn.disabled = false;
     }
   });
+
+  fetch('/site-data.json')
+          .then(res => res.json())
+          .then(data => {
+            if (data.hero_title) document.getElementById('hero-title').innerHTML = data.hero_title.replace('\n', '<br>');
+            if (data.hero_subtitle) document.getElementById('hero-subtitle').textContent = data.hero_subtitle;
+            if (data.about_title) document.getElementById('about-title').textContent = data.about_title;
+            if (data.about_text) document.getElementById('about-text').textContent = data.about_text;
+            if (data.address) document.getElementById('footer-text').textContent = `Klinge & Kamm · ${data.address} · © 2026`;
+          })
+          .catch(err => console.error('Ошибка загрузки site-data.json:', err));
+
 </script>
 
 </body>

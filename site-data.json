@@ -1,5 +1,9 @@
 {
-  "title": "Klinge & Kamm — Barbershop",
-  "phone": "+49 123 456789",
-  "email": "info@klinge-kamm.de"
+  "hero_title": "Handwerk am Kopf,\nnicht von der Stange.",
+  "hero_subtitle": "Klassischer Herrenschnitt und Bartpflege in Kassel — ruhige Hand, scharfe Klinge, kein Terminstress.",
+  "about_title": "Seit 2018 in Kassel",
+  "about_text": "Drei Stühle, ein Handwerk. Wir nehmen uns Zeit für jeden Schnitt — keine Fließbandarbeit, keine Hektik.",
+  "phone": "+49 561 1234567",
+  "email": "hallo@klinge-kamm.de",
+  "address": "Musterstraße 1, 34117 Kassel"
 }

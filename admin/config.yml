@@ -16,6 +16,10 @@ collections:
         label: "Контакты и Заголовки"
         name: "contacts"
         fields:
-          - { label: "Заголовок сайта", name: "title", widget: "string" }
+          - { label: "Заголовок на главной", name: "hero_title", widget: "string" }
+          - { label: "Подзаголовок на главной", name: "hero_subtitle", widget: "text" }
+          - { label: "Заголовок 'О нас'", name: "about_title", widget: "string" }
+          - { label: "Текст 'О нас'", name: "about_text", widget: "text" }
           - { label: "Телефон", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
+          - { label: "E-Mail", name: "email", widget: "string" }
+          - { label: "Адрес", name: "address", widget: "string" }
